@@ -1,0 +1,44 @@
+pip3 install virtualenv
+
+virtualenv myvenv   *** name of venv file
+
+
+3.source myvenv/bin/activate
+
+4.Install Django with name of project:
+
+	django-admin startproject portfolio .
+
+4. Install pip: pip install django
+
+5. Create .gignore
+
+6. Add job blog and job app:
+
+python3 manage.py startapp blog
+
+python3 manage.py runserver
+
+
+
+
+
+python manage.py runserver
+
+pip install pillow
+
+python manage.py makemigrations
+
+
+python manage.py migrate
+
+
+ADMIN
+
+
+python manage.py createsuperuser
+
+username: faribadadko
+Username (leave blank to use 'faribadadko'):
+Email address: faribacodes@gmail.com
+password: 1234
