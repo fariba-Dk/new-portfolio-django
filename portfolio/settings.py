@@ -14,6 +14,8 @@ from pathlib import Path
 
 import os
 
+import jobs
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +32,7 @@ SECRET_KEY = 'django-insecure-b=mc4^*@1%=i9a2vv-^%&t**gc%c1ab8x!f9o78qkn$0+^%mq9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 
@@ -131,9 +133,11 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# e "/Users/faribadadko/Documents/myvenv/lib/python3.9/site-packages/django/urls/conf.py", line 34, in include
+    # urlconf_module = import_module(urlconf_module)

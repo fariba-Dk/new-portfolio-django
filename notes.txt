@@ -3,7 +3,7 @@ pip3 install virtualenv
 virtualenv myvenv   *** name of venv file
 
 
-3.source myvenv/bin/activate
+3.  source myvenv/bin/activate
 
 4.Install Django with name of project:
 
