@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+from django.http import HttpResponse
+
+
+#views methods always take req as first arg
+def home(request):
+    return HttpResponse("Hello World!")

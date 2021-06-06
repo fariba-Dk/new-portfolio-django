@@ -13,12 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django import urls
-from django.contrib import admin
-from django.conf.urls import include, url
+
 from django.urls import path
+from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include, url
+# from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,13 @@ urlpatterns = [
 
 
 
+
+
+
+
 # if settings.DEBUG:
 #   urlpatterns.append(urls(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))
+# Using the URLconf defined in portfolio.urls, Django tried these URL patterns, in this order:
+# DROP TABLE IF EXISTS portfoliodb;
+# DROP SEQUENCE IF EXISTS jobs_job_id_seq;
+
