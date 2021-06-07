@@ -25,6 +25,7 @@ from . import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.allblogs, name='allblogs'),
+    path('<int:blog_id>/', views.detail, name='detail')
     # path('blog/', include('blog.url'))
 # ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ]
