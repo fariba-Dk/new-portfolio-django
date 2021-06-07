@@ -57,7 +57,7 @@
           <a class="nav-link" href="#">Resume</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link active" href="#">Blog</a>
         </li>
       </ul>
     </div>
@@ -66,42 +66,16 @@
 </header>
 
 <main>
+  <div class="container">
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi, I'm Fariba.</h1>
-        <p class="lead text-muted">Hey, my name is Fariba Dadko and I'm a fullstack developer.</p>
-        <p>
-          <a href="mailto:faribacodes@gmail.com" class="btn btn-primary my-2">Email Me</a>
-        </p>
-      </div>
-    </div>
-  </section>
+    <h1 class="text-center pt-3">Welcome to Fariba's Blog</h1>
+    <br />
+    <br />
+    <h2>Latest Posts</h2>
+    
+    <hr />
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-        {% comment %} LOOP THRU ALL JOBS {% endcomment %}
-        {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}"/>
-
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-
-      </div>
-    </div>
   </div>
-
 </main>
 
 <footer class="text-muted py-5">

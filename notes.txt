@@ -43,6 +43,11 @@ Username (leave blank to use 'faribadadko'):
 Email address: faribacodes@gmail.com
 password: 1234
 
+bootstrap:
+
+https://getbootstrap.com/docs/5.0/examples/album
+
+Adding user to database ->
 At the Enter name of role to add: prompt, type the user's name.
 At the Enter password for new role: prompt, type a password for the user.
 At the Enter it again: prompt, retype the password.
