@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include, url
 import jobs.views
+from . import views
 # from django.conf.urls import url
 
 urlpatterns = [

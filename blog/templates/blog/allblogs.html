@@ -72,9 +72,22 @@
     <br />
     <br />
     <h2>Latest Posts</h2>
-    
     <hr />
+  {% comment %} FOR LOOP OVER OUR BLOG OBJ {% endcomment %}
+    {% for blog in blogs.all %}
 
+    <a href=""><h3>{{ blog.title }}</h3></a>
+
+    <h4>{{ blog.pub_date_pretty }}</h4>
+    <br />
+    {% comment %} from bootstrap getting image fluuid {% endcomment %}
+    <img class="image-fluid" src="{{ blog.image.url }}" height="200" width="150"/>
+    <br/>
+
+    <p>{{ blog.summary }}</p>
+
+    {% endfor %}
+    <hr />
   </div>
 </main>
 

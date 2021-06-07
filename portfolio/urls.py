@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from django.conf.urls import include, url
 import jobs.views
 # from django.conf.urls import url
-from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

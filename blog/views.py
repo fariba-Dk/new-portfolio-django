@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-from . import views
+# from django.http import HttpResponse
+from .models import Blog
 
 def allblogs(request):
-  return render(request, 'blog/allblogs.html')
+  blogs = Blog.Objects
+  return render(request, 'blog/allblogs.html', {'blogs':blogs})
+
