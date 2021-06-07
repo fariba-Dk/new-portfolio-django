@@ -6,6 +6,7 @@ class Blog(models.Model):
   pub_date = models.DateField()
   body = models.TextField()
   image = models.ImageField(upload_to='images/')
+  
 
   # to make the blogs to show title
   def __str__(self):

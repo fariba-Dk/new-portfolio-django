@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+  {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>Album example · Bootstrap v5.0</title>
+    <title>📝 My Projects</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -42,22 +43,26 @@
   <body>
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Fariba Dadko</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Fariba Dadko</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
+
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Linkedin</a>
+          <a class="nav-link" href="https://twitter.com/DkFariba">Tweeter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Resume</a>
+          <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/fariba-dk/">Linkedin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Blog</a>
+          <a class="nav-link" href="{% static 'resume-fariba.pdf' %}">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
         </li>
       </ul>
     </div>
@@ -68,15 +73,15 @@
 <main>
   <div class="container">
 
-    <h1 class="text-center pt-3">Welcome to Fariba's Blog</h1>
+    <h1 class="text-center pt-3">Welcome to My Project Page</h1>
     <br />
     <br />
-    <h2>Latest Posts</h2>
+    <h2>Latest Projects</h2>
     <hr />
   {% comment %} FOR LOOP OVER OUR BLOG OBJ {% endcomment %}
     {% for blog in blogs.all %}
 
-    <a href=""><h3>{{ blog.title }}</h3></a>
+    <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
 
     <h4>{{ blog.pub_date_pretty }}</h4>
     <br />
