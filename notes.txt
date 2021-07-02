@@ -160,18 +160,19 @@ Now you can git add and git commit.
 
 Once that is complete you can now push to Heroku!
 
-$ git push heroku master
+$	 git push heroku master
+
 Once that is completed we need to migrate our database just as we would on our own devices.
 
 OPEN THE HEROKU CONSOLE
 
-$ heroku run bash
+$	 heroku run bash
 
 INSIDE THE HEROKU CONSOLE RUN
 
-$ python3 manage.py makemigrations
+$ 	python3 manage.py makemigrations
 
-$ python3 manage.py migrate
+$ 	python3 manage.py migrate
 
 EXIT THE HEROKU CONSOLE
 
@@ -199,3 +200,32 @@ Delete heroku/python from the list of buildpacks
 Then click Add buildpack → Choose "Python" → Save Changes.
 Activate your environment in your code.
 Run heroku ps:scale web=1.
+~~~~~~~~~~~~~~~~~
+
+Configure your application
+Set the ERROR_PAGE_URL and MAINTENANCE_PAGE_URL config vars to the publicly accessible URLs of your custom pages:
+
+heroku config:set \
+  ERROR_PAGE_URL=//s3.amazonaws.com/<your_bucket>/your_error_page.html \
+  MAINTENANCE_PAGE_URL=//s3.amazonaws.com/<your_bucket>/your_maintenance_page.html
+Testing
+To test your maintenance page, type:
+
+heroku maintenance:on
+heroku open
+The custom page will be served and your application logs will show an H80 code for that web hit indicating that a maintenance page was served to the user.
+
+heroku logs -p router -n 1
+2010-10-08T17:44:18-07:00 heroku[router]: at=info code=H80 desc="Maintenance mode" method=GET path=/ host=myapp.herokuapp.com fwd=17.17.17.17 dyno= connect= service= status=503 bytes=
+To test your error page, you can push a bad deploy such as putting a syntax error into a key configuration file, or by creating a path on your app that sleeps for 35 seconds (thereby triggering the error H12 Request Timeout. Visit an app or path with such an error, while watching the logs:
+
+heroku logs --tail
+2010-10-08T18:04:40-07:00 app[web.1]: Sleeping 35 seconds before I serve this page
+2010-10-08T18:05:10-07:00 heroku[router]: at=error code=H12 desc="Request timeout" method=GET path=/ host=myapp.herokuapp.com fwd=17.17.17.17 dyno=web.1 connect=6ms service=30001ms status=503 bytes=0
+2010-10-08T18:05:15-07:00 app[web.1]: Done sleeping
+The custom error page will be displayed in your browser.
+
+~~~~~~~
+git remote add origin https://github.com/fariba-Dk/my-portfolio.github.io.git
+git branch -M main
+git push -u origin main
