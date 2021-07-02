@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import django_on_heroku
 
 import os
 
@@ -147,3 +148,4 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # e "/Users/faribadadko/Documents/myvenv/lib/python3.9/site-packages/django/urls/conf.py", line 34, in include
     # urlconf_module = import_module(urlconf_module)
+django_on_heroku.settings(locals())
