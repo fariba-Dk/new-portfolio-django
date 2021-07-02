@@ -189,3 +189,13 @@ DEBUG = False # change this line to false
 now just add, commit and push up to heroku.
 
 Happy Coding!
+
+
+Amanda Lowry (she/her) - Bakersfield  11:19 AM
+try this:
+Login to your Heroku dashboard and open your projects.
+Go to Settings.
+Delete heroku/python from the list of buildpacks
+Then click Add buildpack → Choose "Python" → Save Changes.
+Activate your environment in your code.
+Run heroku ps:scale web=1.
