@@ -1,2 +1,2 @@
-gunicorn {portfolio-project}.wsgi
+gunicorn portfolio-project.wsgi
 
